@@ -1,0 +1,9 @@
+{
+  "name": "@repro/cofee-maker",
+  "version": "0.0.1",
+  "dependencies": {
+    "@repro/helpers": "*"
+  },
+  "type": "commonjs",
+  "main": "./index.js"
+}

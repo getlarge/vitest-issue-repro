@@ -1,0 +1,30 @@
+{
+  "name": "coffee-maker",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/coffee-maker/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/coffee-maker",
+        "main": "packages/coffee-maker/src/index.ts",
+        "tsConfig": "packages/coffee-maker/tsconfig.lib.json",
+        "assets": ["packages/coffee-maker/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "config": "packages/coffee-maker/vite.config.unit.ts",
+        "reportsDirectory": "../../coverage/packages/coffee-maker"
+      }
+    }
+  },
+  "tags": []
+}
